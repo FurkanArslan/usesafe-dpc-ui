@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
-import { ProductDetails } from "@/components/products/product-details";
 import { products } from "@/lib/data/products";
+import { ProductContainer } from "@/components/products/product-container";
 
 export function generateStaticParams() {
   return products.map((product) => ({
@@ -18,7 +18,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="container py-10">
-      <ProductDetails product={product} />
+      <ProductContainer product={product} />
     </div>
   );
 }
